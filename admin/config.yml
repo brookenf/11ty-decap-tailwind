@@ -1,0 +1,25 @@
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+  create: create {{collection}}/{{slug}}
+  update: update {{collection}}/{{slug}}
+  delete: delete {{collection}}/{{slug}}
+  uploadMedia: upload {{path}}
+  deleteMedia: delete {{path}}
+  openAuthoring: '{{message}}'
+
+media_folder: "_site/assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "page"
+    label: "Pages"
+    folder: 'pages'
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+site_url: https://brooke-11ty-restart.netlify.app/
